@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css  -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- fonts -->
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./images/Subtraction 1.png" alt="logo" />
+      </div>
+      <div class="header-links">
+        <nav>
+          <ul>
+            <li>
+              <a href="#">ჩვენზე</a>
+            </li>
+            <li>
+              <a href="#">თემები</a>
+            </li>
+            <li>
+              <a href="#">რესურსები</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-buttons">
+            <button class="burger-button">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </button>
+            <button class="loginBtn">
+                <img src="./images/Icon metro-user.svg" alt="user" />
+                <span>შესვლა</span>
+            </button>
+            <button class="search"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div class="mobile-menu">
+            <button id="menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+      </div>
+    </header>
+    <div class="popup-wr">
+        <div class="popup">
+            <button id="popup-close">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="fields-table">
+                <h3>რეგისტრაცია</h3>
+                <table>
+                    <tr>
+                        <td class="property">სახელი:</td>
+                        <td id="name-value">das</td>
+                    </tr>
+                    <tr>
+                        <td class="property">გვარი:</td>
+                        <td id="surname-value">sdda</td>
+                    </tr>
+                    <tr>
+                        <td class="property">რეგიონი:</td>
+                        <td id="region-value"></td>
+                    </tr>
+                    <tr>
+                        <td class="property">პოზიცია:</td>
+                        <td id="position-value"></td>
+                    </tr>
+                    <tr>
+                        <td class="property">ელ.ფოსტა:</td>
+                        <td id="property-value"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- main-section  -->
+    <section class="main-wrapper">
+      <div class="navigation">
+        <a href="#">მთავარი</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="#">რეგისტრაცია</a>
+      </div>
+      <section class="child-wrapper">
+        <section class="form-section">
+            <div class="form-title">
+                <h1>რეგისტრაცია</h1>
+                <h2>ავტორიზაცია შესაძლებელია მხოლოდ განმანათლებლებისთვის</h2>
+            </div>
+        <!-- form-section  -->
+            <form id="registration-form">
+                <div id="select-region" class="field">
+                    <label for="region">რეგიონი</label>
+                    <select name="region" id="selectbox2">
+                        <option value="null">აირჩიეთ რეგიონი</option>
+                        <option name="tbilisi" value="თბილისი">თბილისი</option>
+                        <option name="apkhazeti" value="აფხაზეთი">აფხაზეთი</option>
+                        <option name="umi" value="აჭარა">აჭარა</option>
+                        <option name="batumi" value="გურია">გურია</option>
+                        <option name="batumi" value="batumi">იმერეთი</option>
+                        <option name="batumi" value="batumi">კახეთი</option>
+                        <option name="batumi" value="batumi">მცხეთა-მთიანეთი</option>
+                        <option name="batumi" value="batumi">რაჭა-ლეჩხუმი და ქვემო სვანეთი</option>
+                        <option name="batumi" value="batumi">სამეგრელო-ზემო სვანეთი</option>
+                        <option name="batumi" value="batumi">რაჭა-ლეჩხუმი და ქვემო სვანეთი</option>
+                        <option name="batumi" value="batumi">სამცხე-ჯავახეთი</option>
+                        <option name="batumi" value="batumi">ქვემო ქართლი</option>
+                        <option name="batumi" value="batumi"შიდა ქართლი</option>
+                    </select>
+                    <span id="error-message"></span>
+                </div>
+                <div id="select-position" class="field">
+                    <label for="selectbox1">პოზიცია</label>
+                    <select id="selectbox1">
+                        <option value="null">აირჩიეთ პოზიცია</option>
+                        <option value="მასწავლებელი">მასწავლებელი</option>
+                        <option value="სამართალდამცავი">სამართალდამცავი</option>
+                        <option value="სხვა">სხვა</option>
+                    </select>
+                </div>
+                <div class="field" >
+                    <label for="work" class="worklabel">სამუშაო ადგილი</label>
+                    <input type="text" id="work" />
+                    <span id="error-message"></span>
+                </div>
+                <div class="field" >
+                    <label for="email">ელ.ფოსტა</label>
+                    <input type="email" id="email" />
+                    <span id="error-message"></span>
+                </div>
+                <div class="field" >
+                    <label for="name">სახელი</label>
+                    <input type="text" id="name" />
+                    <span id="error-message"></span>
+                </div>
+                <div class="field" >
+                    <label for="surname">გვარი</label>
+                    <input type="text" id="surname" />
+                    <span id="error-message"></span>
+                </div>
+                <div class="field" >
+                    <label for="password">პაროლი</label>
+                    <input type="text" id="password" />
+                    <i class="far fa-eye" id="eye"></i>
+                    <span id="error-message"></span>
+                </div>
+                <div class="field" >
+                    <label for="password-confirm">გაიმეორეთ პაროლი</label>
+                    <input type="text" id="password-confirm" />
+                    <i class="far fa-eye" id="eyeconfirm"></i>
+                    <span id="error-message"></span>
+                </div>
+                <div class="confirm">
+                    <label class="container" id="platform">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        </label>
+                    <div class="custom-checkbox"></div>
+                    <p>ვეთახმები პლატფორმის <a href="#">მოხმარების პირობებს</a></p>
+                </div>
+                <div class="confirm">
+                    <label class="container">
+                        <input type="checkbox" id="confirm">
+                        <span class="checkmark"></span>
+                        </label>
+                    <div class="custom-checkbox"></div>
+                    <p>გავეცანი<a href="#"> კონფიდენციალურობის პოლიტიკას</a></p>
+                </div>
+                <button class="submit-button button">რეგისტრაცია</button>
+            </form>
+        </section>
+        <div class="or">
+            <p>ან</p>
+        </div>
+        <section class="login-buttons">
+            <button class="facebook-login button">
+                <i class="fab fa-facebook-f fa-x"></i>
+                <span>რეგისტრაცია Facebook-ით</span> 
+            </button>
+            <button class="gmail-registration button">
+                <img src="./images/Icon simple-google.svg" alt="gmail">
+                <span>რეგისტრაცია Gmail-ით</span>
+            </button>
+        </section>
+        <div class="login-link">უკვე რეგისტრირებული ხართ? <a href="#">მიყევით ამ ბმულს</a></div>
+      </section>
+    </section>
+    <!-- ===footer=== -->
+    <footer>
+        <div class="footer-wrapper">
+            <div class="right-side">
+                <div class="footer-links">
+                    <span>info@school.ge</span>
+                    <div class="footer-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="left-side">
+                <div class="links">
+                    <a href="#">მოხმარების პირობები</a>
+                    <a href="#">კონფიდენციალურობა</a>
+                </div>
+                <span>© 2021 ყველა უფლება დაცულია</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/select.js"></script>
+    <script src="./js/validation.js"></script>
+  </body>
+</html>
