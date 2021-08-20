@@ -1,11 +1,11 @@
 @media (max-width: 1366px) {
   /* footer  */
   footer {
-    padding: 40px 6%;
+    padding: 66px 6%;
   }
   .right-side {
     position: relative;
-    top: 78px;
+    top: 64px;
     right: 19px;
   }
   .left-side {
@@ -28,11 +28,14 @@
     height: 200px;
     background-color: #828282;
     position: absolute;
-    top: -77px;
+    top: -60px;
     left: 5px;
   }
   .links a:nth-child(1):after {
     left: 224px;
+  }
+  .links :nth-child(1) {
+    padding-top: 25px;
   }
 }
 @media (max-width: 1024px) {
@@ -42,7 +45,14 @@
   .links a:nth-child(1):before,
   .links a:nth-child(1):after {
     height: 140px;
-    top: -35px;
+    top: -10px;
+  }
+  .left-side {
+    position: relative;
+    bottom: 25px;
+  }
+  .right-side {
+    top: 37px;
   }
 }
 @media (max-width: 768px) {
@@ -72,7 +82,7 @@
   }
   /* footer  */
   footer {
-    padding: 40px;
+    padding: 33px 40px;
     font-size: 14px;
     justify-content: flex-start;
   }
@@ -87,6 +97,9 @@
   .links a:nth-child(1):after {
     display: none;
   }
+  .left-side {
+    bottom: 0px;
+  }
   .left-side a {
     padding: 0 15px;
     margin-top: 0;
@@ -98,7 +111,7 @@
     height: auto;
   }
   .links a:nth-child(1) {
-    padding-left: 0;
+    padding: 0 15px 0 0;
   }
 }
 @media (max-width: 710px) {
@@ -166,8 +179,18 @@
     top: 0px;
     padding: 20px 10px;
   }
+  .popup h3 {
+    font-size: 21px;
+  }
+  td p {
+    max-width: 150px;
+  }
+  td {
+    font-size: 13px;
+  }
   nav {
-    right: 25%;
+    right: 50%;
+    transform: translate(50%, 0%);
   }
   .facebook-login,
   .gmail-registration {

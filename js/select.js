@@ -1,7 +1,24 @@
-// Iterate over each select element
+// initialize options list
+const listArr = [
+  "თბილისი",
+  "აფხაზეთი",
+  "აჭარა",
+  "გურია",
+  "იმერეთი",
+  "კახეთი",
+  "მცხეთა-მთიანეთი",
+  "რაჭა-ლეჩხუმი და ქვემო სვანეთი",
+  "სამეგრელო-ზემო სვანეთი",
+  "სამცხე-ჯავახეთი",
+  "ქვემო ქართლი",
+  "შიდა ქართლი",
+];
+listArr.map((item) => {
+  $(`<option value=${item}>${item}</option>`).appendTo($("#selectbox2"));
+});
 $("select").each(function () {
   // Cache the number of options
-  var $this = $(this),
+  let $this = $(this),
     numberOfOptions = $(this).children("option").length;
 
   // Hides the select element
@@ -10,32 +27,27 @@ $("select").each(function () {
   // Wrap the select element in a div
   $this.wrap('<div class="select"></div>');
 
-  // Insert a styled div to sit over the top of the hidden select element
   $this.after('<div class="styledSelect"></div>');
 
-  // Cache the styled div
-  var $styledSelect = $this.next("div.styledSelect");
+  let $styledSelect = $this.next("div.styledSelect");
 
-  // Show the first select option in the styled div
   $styledSelect.text($this.children("option").eq(0).text());
 
   // Insert an unordered list after the styled div and also cache the list
-  var $list = $("<ul />", {
+  let $list = $("<ul />", {
     class: "options",
   }).insertAfter($styledSelect);
 
   // Insert a list item into the unordered list for each select option
-  for (var i = 0; i < numberOfOptions; i++) {
+  for (let i = 0; i < numberOfOptions; i++) {
     $("<li />", {
       text: $this.children("option").eq(i).text(),
       rel: $this.children("option").eq(i).val(),
     }).appendTo($list);
   }
 
-  // Cache the list items
-  var $listItems = $list.children("li");
+  let $listItems = $list.children("li");
 
-  // Show the unordered list when the styled div is clicked (also hides it if the div is clicked again)
   $styledSelect.click(function (e) {
     e.stopPropagation();
     $("div.styledSelect.active").each(function () {
@@ -51,7 +63,17 @@ $("select").each(function () {
     $styledSelect.text($(this).text()).removeClass("active");
     $this.val($(this).attr("rel"));
     $list.hide();
-    /* alert($this.val()); Uncomment this for demonstration! */
+    if ($this.val() === "სხვა") {
+      $("#other").css("display", "flex");
+    } else {
+      $("#other").css("display", "none");
+    }
+    if ($this.val() !== "") {
+      const wrapper = $this.closest(".field");
+      wrapper.removeClass("incorrect");
+      wrapper.find(".error-message").text("");
+    }
+    console.log($this.val());
   });
 
   // Hides the unordered list when clicking outside of it
